@@ -296,22 +296,22 @@ public class Game2048 extends JPanel {
     final int w = fm.stringWidth(s);
     final int h = -(int) fm.getLineMetrics(s, g).getBaselineOffsets()[2];
 
-    if (value != 0)
+    if (value != 0) //값이 0이 아니면
       g.drawString(s, xOffset + (TILE_SIZE - w) / 2, yOffset + TILE_SIZE - (TILE_SIZE - h) / 2 - 2);
 
-    if (myWin || myLose) {
-      g.setColor(new Color(255, 255, 255, 30));
+    if (myWin || myLose) {//이겼다 또는 졌다
+      g.setColor(new Color(255, 255, 255, 30)); 
       g.fillRect(0, 0, getWidth(), getHeight());
       g.setColor(new Color(78, 139, 202));
       g.setFont(new Font(FONT_NAME, Font.BOLD, 48));
-      if (myWin) {
+      if (myWin) {//이기면
         g.drawString("You won!", 68, 150);
       }
-      if (myLose) {
+      if (myLose) {//진다면
         g.drawString("Game over!", 50, 130);
         g.drawString("You lose!", 64, 200);
       }
-      if (myWin || myLose) {
+      if (myWin || myLose) {//이겼다 또는 졌다
         g.setFont(new Font(FONT_NAME, Font.PLAIN, 16));
         g.setColor(new Color(128, 128, 128, 128));
         g.drawString("Press ESC to play again", 80, getHeight() - 40);
@@ -326,22 +326,22 @@ public class Game2048 extends JPanel {
     return arg * (TILES_MARGIN + TILE_SIZE) + TILES_MARGIN;
   }
 
-  static class Tile {
-    int value;
+  static class Tile { //정적 내부 클래스 tile
+    int value; 변수 value선언
 
     public Tile() {
-      this(0);
+      this(0); //자신 클래스 public tile()생성자 호출
     }
 
     public Tile(int num) {
       value = num;
     }
 
-    public boolean isEmpty() {
-      return value == 0;
+    public boolean isEmpty() {//비어있는 배열인지 아닌지 확인
+      return value == 0; //리턴값을 0
     }
 
-    public Color getForeground() {
+    public Color getForeground() { //컴포넌트 전경색상을 얻는다.
 <<<<<<< HEAD
       return value < 16 ? new Color(0x776e65) :  new Color(0xf9f6f2); // 리턴 되는 값이 16보다 작을 경우 색을 0x776e65를 사용
     }//거짓일 경우 0xf9f6f2를 사용
