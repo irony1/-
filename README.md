@@ -309,7 +309,8 @@ public class Game2048 extends JPanel {
       }
       if (myLose) {//진다면
         g.drawString("Game over!", 50, 130);//"Game over!" 띄우기
-        g.drawString("You lose!", 64, 200);// "You Lose!" 띄위기
+        g.drawString("You lose!", 64, 200);// "You Lose!" 띄우기
+
       }
       if (myWin || myLose) {//이겼다 또는 졌다 일 때
         g.setFont(new Font(FONT_NAME, Font.PLAIN, 16)); //폰트 설정
@@ -330,6 +331,7 @@ public class Game2048 extends JPanel {
     int value; 변수 value선언
 
     public Tile() {
+
       this(0); //자신 클래스 public tile() 생성자 호출
     }
 
@@ -342,7 +344,7 @@ public class Game2048 extends JPanel {
     }
 
     public Color getForeground() { //컴포넌트 전경색상을 얻는다.
-<<<<<<< HEAD
+
       return value < 16 ? new Color(0x776e65) :  new Color(0xf9f6f2); // 리턴 되는 값이 16보다 작을 경우 색을 0x776e65를 사용
     }//거짓일 경우 0xf9f6f2를 사용
 
