@@ -342,6 +342,7 @@ public class Game2048 extends JPanel {
     }
 
     public Color getForeground() {
+<<<<<<< HEAD
       return value < 16 ? new Color(0x776e65) :  new Color(0xf9f6f2); // 리턴 되는 값이 16보다 작을 경우 색을 0x776e65를 사용
     }//거짓일 경우 0xf9f6f2를 사용
 
@@ -360,6 +361,26 @@ public class Game2048 extends JPanel {
         case 2048: return new Color(0xedc22e); //값이 2048 일때 색상코드 0xedc22e를 불러 배경으로 사용
       }
       return new Color(0xcdc1b4); // 스위치 문을 빠져나오면 색상코드 0xcdc1b4를 불러 배경으로 사용
+=======
+      return value < 16 ? new Color(0x776e65) :  new Color(0xf9f6f2);
+    }
+
+    public Color getBackground() {
+      switch (value) { //스위치 값에 따라
+        case 2:    return new Color(0xeee4da); //값이 2 일때 색상코드 #eee4da를 불러 배경으로 사용
+        case 4:    return new Color(0xede0c8);
+        case 8:    return new Color(0xf2b179);
+        case 16:   return new Color(0xf59563);
+        case 32:   return new Color(0xf67c5f);
+        case 64:   return new Color(0xf65e3b);
+        case 128:  return new Color(0xedcf72);
+        case 256:  return new Color(0xedcc61);
+        case 512:  return new Color(0xedc850);
+        case 1024: return new Color(0xedc53f);
+        case 2048: return new Color(0xedc22e);
+      }
+      return new Color(0xcdc1b4);
+>>>>>>> 6fecf36a7eafc1417799319412860815a91a8af9
     }
   }
 
@@ -369,7 +390,11 @@ public class Game2048 extends JPanel {
     //프레임 클래스 속성중에서 사용자에게 보여줄지에 대한 여부는 false로 되어있기에
     //프레임 객체를 생성했다는 것만으로는 창이 나타나지 않음
     //그러므로 창을 보여주기 위한 메소드를 호출해야 창을 볼 수 있음
+<<<<<<< HEAD
     game.setTitle("2048 Game");//창의 타이틀바의 내용을 "2048 game"으로 표시
+=======
+    game.setTitle("2048 Game");//창의 타이틀바의 내용을 "2048 game"
+>>>>>>> 6fecf36a7eafc1417799319412860815a91a8af9
     game.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);//윈도우창 종료시 프로세스까지 닫음
     game.setSize(340, 400);// 창의 가로와 세로 길이를 설정
     game.setResizable(false);//창의 크기를 조절할 수 없도록 하기
