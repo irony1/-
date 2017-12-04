@@ -296,29 +296,29 @@ public class Game2048 extends JPanel {
     final int w = fm.stringWidth(s);
     final int h = -(int) fm.getLineMetrics(s, g).getBaselineOffsets()[2];
 
-    if (value != 0)
+    if (value != 0) //값이 0이 아니면
       g.drawString(s, xOffset + (TILE_SIZE - w) / 2, yOffset + TILE_SIZE - (TILE_SIZE - h) / 2 - 2);
 
-    if (myWin || myLose) {
-      g.setColor(new Color(255, 255, 255, 30));
+    if (myWin || myLose) {//이겼다 또는 졌다
+      g.setColor(new Color(255, 255, 255, 30)); //색 설정
       g.fillRect(0, 0, getWidth(), getHeight());
-      g.setColor(new Color(78, 139, 202));
-      g.setFont(new Font(FONT_NAME, Font.BOLD, 48));
-      if (myWin) {
-        g.drawString("You won!", 68, 150);
+      g.setColor(new Color(78, 139, 202)); //색 설정
+      g.setFont(new Font(FONT_NAME, Font.BOLD, 48)); // 폰트설정
+      if (myWin) {//이기면
+        g.drawString("You won!", 68, 150);//"you won" 띄우기
       }
-      if (myLose) {
-        g.drawString("Game over!", 50, 130);
-        g.drawString("You lose!", 64, 200);
+      if (myLose) {//진다면
+        g.drawString("Game over!", 50, 130);//"Game over!" 띄우기
+        g.drawString("You lose!", 64, 200);// "You Lose!" 띄위기
       }
-      if (myWin || myLose) {
-        g.setFont(new Font(FONT_NAME, Font.PLAIN, 16));
-        g.setColor(new Color(128, 128, 128, 128));
-        g.drawString("Press ESC to play again", 80, getHeight() - 40);
-      }
+      if (myWin || myLose) {//이겼다 또는 졌다 일 때
+        g.setFont(new Font(FONT_NAME, Font.PLAIN, 16)); //폰트 설정
+        g.setColor(new Color(128, 128, 128, 128)); // 색 설정
+        g.drawString("Press ESC to play again", 80, getHeight() - 40);  
+      } //"press ESC to play again"창에 띄우기
     }
-    g.setFont(new Font(FONT_NAME, Font.PLAIN, 18));
-    g.drawString("Score: " + myScore, 200, 365);
+    g.setFont(new Font(FONT_NAME, Font.PLAIN, 18)); //폰트 설정
+    g.drawString("Score: " + myScore, 200, 365); //점수 표시
 
   }
 
@@ -326,22 +326,22 @@ public class Game2048 extends JPanel {
     return arg * (TILES_MARGIN + TILE_SIZE) + TILES_MARGIN;
   }
 
-  static class Tile {
-    int value;
+  static class Tile { //정적 내부 클래스 tile
+    int value; 변수 value선언
 
     public Tile() {
-      this(0);
+      this(0); //자신 클래스 public tile() 생성자 호출
     }
 
     public Tile(int num) {
       value = num;
     }
 
-    public boolean isEmpty() {
-      return value == 0;
+    public boolean isEmpty() {//비어있는 배열인지 아닌지 확인
+      return value == 0; //리턴값을 0
     }
 
-    public Color getForeground() {
+    public Color getForeground() { //컴포넌트 전경색상을 얻는다.
 <<<<<<< HEAD
       return value < 16 ? new Color(0x776e65) :  new Color(0xf9f6f2); // 리턴 되는 값이 16보다 작을 경우 색을 0x776e65를 사용
     }//거짓일 경우 0xf9f6f2를 사용
@@ -361,26 +361,6 @@ public class Game2048 extends JPanel {
         case 2048: return new Color(0xedc22e); //값이 2048 일때 색상코드 0xedc22e를 불러 배경으로 사용
       }
       return new Color(0xcdc1b4); // 스위치 문을 빠져나오면 색상코드 0xcdc1b4를 불러 배경으로 사용
-=======
-      return value < 16 ? new Color(0x776e65) :  new Color(0xf9f6f2);
-    }
-
-    public Color getBackground() {
-      switch (value) { //스위치 값에 따라
-        case 2:    return new Color(0xeee4da); //값이 2 일때 색상코드 #eee4da를 불러 배경으로 사용
-        case 4:    return new Color(0xede0c8);
-        case 8:    return new Color(0xf2b179);
-        case 16:   return new Color(0xf59563);
-        case 32:   return new Color(0xf67c5f);
-        case 64:   return new Color(0xf65e3b);
-        case 128:  return new Color(0xedcf72);
-        case 256:  return new Color(0xedcc61);
-        case 512:  return new Color(0xedc850);
-        case 1024: return new Color(0xedc53f);
-        case 2048: return new Color(0xedc22e);
-      }
-      return new Color(0xcdc1b4);
->>>>>>> 6fecf36a7eafc1417799319412860815a91a8af9
     }
   }
 
@@ -399,7 +379,7 @@ public class Game2048 extends JPanel {
     game.setSize(340, 400);// 창의 가로와 세로 길이를 설정
     game.setResizable(false);//창의 크기를 조절할 수 없도록 하기
 
-    game.add(new Game2048());//???
+    game.add(new Game2048());//새 게임 추가
 
     game.setLocationRelativeTo(null);//윈도우 창을 화면의 가운데에 띄우는 역할
     game.setVisible(true);//창을 화면에 나타낼 것인지 설정
